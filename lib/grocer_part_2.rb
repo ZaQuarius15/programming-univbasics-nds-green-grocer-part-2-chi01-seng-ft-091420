@@ -31,9 +31,9 @@ end
 def apply_clearance(cart)
   cart = consolidate_cart(cart)
   counter = 0 
-  while counter < con_cart.length do
-    if con_cart[counter][:clearance] == true 
-      co
+  while counter < cart.length do
+    if cart[counter][:clearance] == true 
+      cart[counter][:price] = cart[counter][:price] * 0.8
     end
     counter += 1
   end
