@@ -32,9 +32,12 @@ def apply_clearance(cart)
   cart = consolidate_cart(cart)
   counter = 0 
   while counter < con_cart.length do
-  
+    if con_cart[counter][:clearance] == true 
+      co
+    end
+    counter += 1
   end
-  
+  cart
 end
 
 def checkout(cart, coupons)
