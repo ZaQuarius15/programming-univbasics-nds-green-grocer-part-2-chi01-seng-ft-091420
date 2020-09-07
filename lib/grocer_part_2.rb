@@ -46,6 +46,7 @@ def checkout(cart, coupons)
   clear_cart = apply_clearance(coup_cart)
   price_total = 0
   clear_cart.each do |item|
+    binding.pry
     price_total += (item[:price] * item[:count])
   end
   if price_total > 100
