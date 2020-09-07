@@ -29,7 +29,6 @@ def apply_coupons(cart, coupons)
 end
 
 def apply_clearance(cart)
-  cart = consolidate_cart(cart)
   counter = 0 
   while counter < cart.length do
     if cart[counter][:clearance] == true 
