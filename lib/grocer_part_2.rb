@@ -41,22 +41,14 @@ def apply_clearance(cart)
 end
 
 def checkout(cart, coupons)
-  binding.pry
-  cart = apply_coupons(cart, coupons)
-  
-  
-  
-  
-  
-  
-  
-  # Consult README for inputs and outputs
-  #
-  # This method should call
-  # * consolidate_cart
-  # * apply_coupons
-  # * apply_clearance
-  #
-  # BEFORE it begins the work of calculating the total (or else you might have
-  # some irritated customers
+  price_total = 0
+  con_cart = consolidate_cart(cart)
+  coup_cart = apply_coupons(con_cart, coupons)
+  clear_cart = apply_clearance(coup_cart)
+  clear_cart.each do |item|
+    price_total += (item[:price] * item[:count])
+  end
+  if price_total > $100
+    price_total = price_total * 0.9
+  end
 end
